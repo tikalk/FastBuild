@@ -1,0 +1,22 @@
+{
+  "name": "bob",
+  "version": "0.0.1",
+  "description": "a tool for fast build",
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/tikalk/FastBuild.git"
+  },
+  "license": "Artistic-2.0",
+  "bin": {
+  	"commandcar": "index.js"
+  },
+  "dependencies": {
+    "underscore": "*",
+    "underscore.string": "*",
+    "commander": "*",
+    "yamljs": "*",
+    "chance": "*",
+    "sync-exec": "*",
+    "request": "*"
+  }
+}
