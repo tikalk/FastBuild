@@ -17,6 +17,8 @@
     "yamljs": "*",
     "chance": "*",
     "sync-exec": "*",
+    "fs-extra": "*",
+    "node-uuid": "*",
     "request": "*"
   }
 }
