@@ -15,10 +15,13 @@ var javaVersionOutput = exec('java -version');
 var firstQuotesIndex = javaVersionOutput.stderr.indexOf('"');
 var SecondQuotesIndex = javaVersionOutput.stderr.indexOf('"',firstQuotesIndex + 1);
 var javaVersion = javaVersionOutput.stderr.substr(firstQuotesIndex + 1,SecondQuotesIndex - firstQuotesIndex - 1);
+console.log('java verson is %s',javaVersion);
 
 // second, realize maven version
 var mavenVersionOutput = exec('mvn -v');
-var mavenVersion = mavenVersionOutput.stderr.substr(13,mavenVersionOutput.stderr.indexOf(' ') - 13).trim();
+console.log('mvn -v output is %s',util.inspect(mavenVersionOutput));
+var mavenVersion = mavenVersionOutput.stdout.substr(13,mavenVersionOutput.stdout.indexOf("\n",13) - 13).trim();
+console.log('maven verson is %s',mavenVersion);
 
 // if we dont have a .git2 directory, create it
 try{
@@ -34,4 +37,4 @@ exec('git --git-dir=.git2 commit -m "' + id + '"');
 
 
 
-console.log(javaVersion);
+
